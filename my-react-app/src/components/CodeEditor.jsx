@@ -34,7 +34,7 @@ const CodeEditor = () => {
                     <LanguageSelector language={language} onSelect={onSelect}/>
                     <Editor
                         theme="vs-dark"
-                        height="70vh" 
+                        height="75vh" 
                         language={language} 
                         defaultValue={CODE_SNIPPETS[language]}
                         value={value}

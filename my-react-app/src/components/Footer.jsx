@@ -6,12 +6,12 @@ export const Footer = () => {
     <Box 
       bg="#1b1d22"
       color="white" 
-      py={4} 
+      py={2} 
       px={8} 
       w="100%" 
       mt="auto"
       opacity={0.9}
-      marginBottom="0"
+      marginBottom="-5"
       >
         <HStack justifyContent="space-between">
           

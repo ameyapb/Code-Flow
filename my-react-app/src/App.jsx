@@ -14,9 +14,9 @@ function App() {
             display="flex" 
             flexDirection="column"
             >
-              <Box flex="1">
-                <CodeEditor />
-              </Box>
+
+              <CodeEditor />
+
               
               <Footer />
           </Box>
