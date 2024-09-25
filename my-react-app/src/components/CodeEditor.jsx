@@ -28,7 +28,7 @@ const CodeEditor = () => {
                 theme="vs-dark"
                 height="75vh" 
                 language={language} 
-                defaultValue="// some comment" 
+                defaultValue={CODE_SNIPPETS[language]}
                 value={value}
                 onChange={
                     (value) => setValue(value)
