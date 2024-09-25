@@ -4,7 +4,7 @@ import React from "react";
 
 const languages = Object.entries(LANGUAGE_VERSIONS)
 
-export const LanguageSelector = () => {
+export const LanguageSelector = ({language, onSelect}) => {
     return (
         <Box>
             <Text mb={2} fontSize='lg'>
@@ -12,12 +12,12 @@ export const LanguageSelector = () => {
             </Text>
             <Menu>
                 <MenuButton as={Button} >
-                    JavaScript
+                    {language}
                 </MenuButton>
                 <MenuList>
                     {
                         languages.map(([language, version]) => (
-                            <MenuItem key={language}>
+                            <MenuItem key={language} onClick={() => onSelect(language)}>
                                 {language}
                                 &nbsp;
                                 <Text as="span" color='grey.600' fontSize="sm">
