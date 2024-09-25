@@ -4,6 +4,8 @@ import {Editor} from "@monaco-editor/react"
 import { LanguageSelector } from './LanguageSelector.jsx'
 import { CODE_SNIPPETS } from "../constants.js";
 import { Output } from './Output.jsx'
+import { NavBar } from './NavBar.jsx'
+
 
 const CodeEditor = () => {
     const editorRef = useRef("")
@@ -23,13 +25,16 @@ const CodeEditor = () => {
     }
 
     return (
-        <Box>
+        <Box pt="85px">
+            <NavBar />
             <HStack spacing={4}>
+                
                 <Box w='50%'>
+                    
                     <LanguageSelector language={language} onSelect={onSelect}/>
                     <Editor
                         theme="vs-dark"
-                        height="75vh" 
+                        height="70vh" 
                         language={language} 
                         defaultValue={CODE_SNIPPETS[language]}
                         value={value}
@@ -43,6 +48,7 @@ const CodeEditor = () => {
                 </Box>
                 <Output editorRef={editorRef} language={language}/>
             </HStack>
+            
         </Box>
     )
 }
