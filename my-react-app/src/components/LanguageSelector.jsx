@@ -3,25 +3,37 @@ import {LANGUAGE_VERSIONS} from '../constants.js'
 import React from "react";
 
 const languages = Object.entries(LANGUAGE_VERSIONS)
+const ACTIVE_COLOR = "blue.400"
 
 export const LanguageSelector = ({language, onSelect}) => {
     return (
-        <Box>
+        <Box ml={2} mb={4}>
             <Text mb={2} fontSize='lg'>
                 Language:
             </Text>
-            <Menu>
+            <Menu isLazy>
                 <MenuButton as={Button} >
                     {language}
                 </MenuButton>
-                <MenuList>
+                <MenuList bg="#110c1b">
                     {
-                        languages.map(([language, version]) => (
-                            <MenuItem key={language} onClick={() => onSelect(language)}>
-                                {language}
+                        languages.map(([lang, version]) => (
+                            <MenuItem key={lang} 
+                                color={
+                                    lang === language? ACTIVE_COLOR : ""
+                                }
+                                bg={
+                                    lang === language? "grey.900": "transperant"
+                                }
+                                _hover={{
+                                    color: ACTIVE_COLOR,
+                                    bg: "grey.900"
+                                }}
+                                onClick={() => onSelect(lang)}>
+                                {lang}
                                 &nbsp;
                                 <Text as="span" color='grey.600' fontSize="sm">
-                                    {version}
+                                    ({version})
                                 </Text>
                             </MenuItem>
                         ))
