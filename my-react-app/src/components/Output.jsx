@@ -41,7 +41,7 @@ export const Output = ({editorRef, language}) => {
                 Run Code
             </Button>
             <Box
-                height='75vh'
+                height='70vh'
                 p={2}
                 color = {
                     isError? "red.400":""
