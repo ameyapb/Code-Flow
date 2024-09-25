@@ -31,9 +31,6 @@ export const Output = ({editorRef, language}) => {
     
     return (
         <Box w='50%'>
-            <Text mb={2} fontSize='lg'>
-                output
-            </Text>
             <Button 
                 variant='outline'
                 colorScheme="green"
